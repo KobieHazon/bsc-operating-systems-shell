@@ -12,6 +12,7 @@ Unix shell coursework implementing foreground/background execution, pipes, and s
 - Last recovered work: 2019-2020 archive copy.
 - Supplied exercise material is identified separately below.
 - My implementation is kept separately from supplied exercise files.
+- The historical implementation remains recoverable from that solution commit. The maintained implementation adds only minimal host-compatibility fixes: the required signal declarations and acceptance of an already-reaped foreground child when the `SIGCHLD` handler wins the wait race.
 - Submitted ZIP wrappers and Apple resource forks were omitted.
 
 ## Files
@@ -25,6 +26,11 @@ Implementation material:
 
 - `src/myshell.c`
 
+Validation tools:
+
+- `scripts/check_repository.py` checks source presence and privacy hygiene.
+- `scripts/test_shell.py` runs a deterministic foreground-command regression smoke; it is validation infrastructure, not part of the historical submission.
+
 ## Tech Stack
 
 - C.
@@ -37,6 +43,8 @@ Implementation material:
 ```bash
 make check
 ```
+
+This performs the static/privacy check, compiles the recovered shell, and verifies that a foreground command completes without an internal wait error.
 
 ## Notes
 

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <errno.h>
 #include <signal.h>
 #include <zconf.h>
 #include <sys/wait.h>
@@ -95,8 +96,9 @@ int process_arglist(int count, char **arglist) {
             return print_and_return("Error: reading from pipe failed.\n", 0,0);
         if (!is_pipe)
             close(pid_pipe[0]);
+        /* The SIGCHLD handler may have already reaped this foreground child. */
         if (!is_background && !is_pipe)
-            if (waitpid(child_pid, NULL, 0) == -1)
+            if (waitpid(child_pid, NULL, 0) == -1 && errno != ECHILD)
                 return print_and_return("Error: waitpid() failed.\n", 0, 0);
         if (is_pipe) {
             if ((fork_pid = fork()) < 0)
