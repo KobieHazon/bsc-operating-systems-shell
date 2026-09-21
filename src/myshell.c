@@ -3,8 +3,8 @@
 #include <string.h>
 #include <errno.h>
 #include <signal.h>
-#include <zconf.h>
 #include <sys/wait.h>
+#include <unistd.h>
 
 /*
  * int fill_pipe(char ***pt_cmd1, char ***pt_cmd2, int count):
