@@ -1,6 +1,6 @@
 # BSc Operating Systems - Shell
 
-- Course: BSc Computer Science.
+- Course: Operating Systems.
 - My implementation is kept separately from supplied exercise files.
 
 ## Contents
@@ -18,10 +18,9 @@ Implementation material:
 
 - `src/myshell.c`
 
-Validation tools:
+Tests:
 
-- `scripts/check_repository.py` checks source presence and privacy hygiene.
-- `scripts/test_shell.py` runs a deterministic foreground-command regression smoke; it is validation infrastructure, not part of the historical submission.
+- `scripts/test_shell.py` checks that foreground commands finish successfully.
 
 ## Tech Stack
 
