@@ -1,19 +1,15 @@
 # BSc Operating Systems - Shell
 
-A historical archive of my CS BSc coursework.
-
-## Contents
-
-Unix shell coursework implementing foreground/background execution, pipes, and signal handling against a supplied shell parser/driver.
-
-## Provenance
-
-- Era: CS BSc.
-- Last recovered work: 2019-2020 archive copy.
+- Course: BSc Computer Science.
+- Available copy: 2019–2020.
 - Supplied exercise material is identified separately below.
 - My implementation is kept separately from supplied exercise files.
 - The historical implementation remains recoverable from that solution commit. The maintained implementation adds only minimal host-compatibility fixes: the required signal declarations and acceptance of an already-reaped foreground child when the `SIGCHLD` handler wins the wait race.
 - Submitted ZIP wrappers and Apple resource forks were omitted.
+
+## Contents
+
+Unix shell coursework implementing foreground/background execution, pipes, and signal handling against a supplied shell parser/driver.
 
 ## Files
 
